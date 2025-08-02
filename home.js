@@ -2,6 +2,9 @@
 function toggleMenu() {
     document.querySelector('.sidenav').classList.toggle('open');
 }
+function toggleNav() {
+    document.querySelector('.nav-link').classList.toggle('open');
+}
 
 const filters = document.querySelectorAll(".sidenav-link li");
 const cards = document.querySelectorAll(".card");
