@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    padding: 20px 30px;
+    background-color: rgba(2, 2, 2, 0.9);
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+}
+
+.nav-link ul {
+    display: flex;
+    list-style: none;
+    font-size: 1rem;
+    gap: 20px;
+}
+
+.nav-link a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.sidenav {
+    background-color: rgb(35, 35, 35);
+    color: white;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 30px;
+    padding-top: 100px;
+    font-size: 1.2rem;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.sidenav h3 {
+    margin-bottom: 10px;
+}
+
+.sidenav-link {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.sidenav-link li {
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.sidenav-link li:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+.content {
+    margin-left: 250px;
+    padding: 120px 40px 40px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.card img:hover {
+    opacity: 0.7;
+}
+
+.card button {
+    position: absolute;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(15, 15, 15, 0.8);
+    color: rgba(244, 244, 244, 0.9);
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card button:hover {
+    background-color: rgba(15, 15, 15, 1);
+    color: white;
+    font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    .sidenav {
+        transform: translateX(-100%);
+    }
+
+    .sidenav.open {
+        transform: translateX(0);
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 120px 20px;
+        grid-template-columns: repeat(300px, 1fr);
+    }
+
+    .card img {
+        max-height: 250px;
+    }
+}
